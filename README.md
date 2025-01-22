@@ -1,8 +1,8 @@
 # veterinaria
 **Comandos a Ejecutar**
 Frontend:
-  -cd Frontend
-  - npm intall
+  - cd Frontend
+  - npm install
   - npm run dev
 
 

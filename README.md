@@ -12,3 +12,8 @@ Frontend:
 3. Instalar FastAPI: pip install fastapi
 4. Instalar el servidor: pip install uvicorn
 5. Ejecutar el servidor: backend.app.main:app --reload
+
+## Node.js
+1. por si acaso: npm init
+1.npm install express mongoose dotenv cors bcryptjs jsonwebtoken express-validator
+2. npm install --save-dev nodemon

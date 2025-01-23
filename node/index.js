@@ -10,8 +10,8 @@ app.use(cors())
 app.get('/api/usuarios', (req, res) => {
     const usuarios = [
         { id: 1, name: "Camilo", lastName: "Andres" },
-        { id: 2, name: "Laura", lastName: "Gonzalez" },
-        { id: 3, name: "Carlos", lastName: "Perez" },
+        { id: 2, name: "Junior", lastName: "Herrera" },
+        { id: 3, name: "Edier", lastName: "Guerra" },
     ];
     res.json(usuarios); // Envía el objeto al frontend
 })

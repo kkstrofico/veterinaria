@@ -12,11 +12,11 @@ app.get('/api/usuarios', (req, res) => {
         { id: 1, name: "Camilo", lastName: "Andres" },
         { id: 2, name: "Laura", lastName: "Gonzalez" },
         { id: 3, name: "Carlos", lastName: "Perez" },
-    ];;
-    res.json(usuario); // Envía el objeto al frontend
+    ];
+    res.json(usuarios); // Envía el objeto al frontend
 })
 
 const port = 3000
 app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor corriendo en http://localhost:${port}`);
 });

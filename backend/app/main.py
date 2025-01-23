@@ -6,7 +6,7 @@ app = FastAPI()
 
 # Lista de orígenes permitidos (React suele correr en localhost:3000 durante el desarrollo)
 origins = [
-    "http://localhost:5173",  # Origen del frontend en desarrollo
+    "http://localhost:5174",  # Origen del frontend en desarrollo
 ]
 
 # Agregar el middleware de CORS
@@ -26,8 +26,12 @@ class UserSchema(BaseModel):
 @app.get("/")
 def root():
     return "Hola, FastAPI"
-
-@app.post("/users/")
-def message_user(users_data:UserSchema):
-    print(users_data)
-    return {"message":"Son estos los datos","datos":users_data}
+@app.get("/users/")
+def get_users():
+    # Simulando algunos datos
+    users_data = [
+        {"id": 1, "name": "Juan", "lastName": "Pérez"},
+        {"id": 2, "name": "Ana", "lastName": "García"},
+        {"id": 3, "name": "Luis", "lastName": "Sánchez"},
+    ]
+    return {"message": "Usuarios obtenidos correctamente", "data": users_data}

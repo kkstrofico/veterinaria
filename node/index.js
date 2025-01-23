@@ -6,7 +6,6 @@ const app = express()
 
 // Middleware para habilitar CORS
 app.use(cors())
-
 app.get('/api/usuarios', (req, res) => {
     const usuarios = [
         { id: 1, name: "Camilo", lastName: "Andres" },

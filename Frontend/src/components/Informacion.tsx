@@ -6,10 +6,10 @@ interface User {
 }
 
 interface Props {
-  data: User[]; // El componente recibe `data` como un array de `User`
+    data: User[]; // El componente recibe `data` como un array de `User`
 }
 
-function Informacion({ data }: Props) {
+export function InformacionNode({ data }: Props) {
     return (
     <div>
         {data.map((user) => (
@@ -21,5 +21,17 @@ function Informacion({ data }: Props) {
     </div>
     );
 }
+export function InformacionFazt({ data, message }: Props & { message: string }) {
+    return (
+    <div>
+        <h1>{message}</h1>
+        {data.map((user) => (
+        <div key={user.id}>
+            <h2>{user.name}</h2>
+            <h3>{user.lastName}</h3>
+        </div>
+        ))}
+    </div>
+    );
+}
 
-export default Informacion;

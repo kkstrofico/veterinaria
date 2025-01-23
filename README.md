@@ -14,5 +14,8 @@ Frontend:
 5. Ejecutar el servidor: uvicorn backend.app.main:app --reload
 
 ## Node.js
-1.npm install express 
+
+1.npm install express (ejecutarlo en la rama node)
+2.npm install cors
+
 

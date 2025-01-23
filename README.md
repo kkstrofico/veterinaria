@@ -15,7 +15,7 @@ Frontend:
 
 ## Node.js
 
-1.npm install express (ejecutarlo en la rama node)
-2.npm install cors
+1. npm install express (ejecutarlo en la rama node)
+2. npm install cors
 
 

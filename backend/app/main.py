@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import requests 
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -26,6 +27,7 @@ class UserSchema(BaseModel):
 @app.get("/")
 def root():
     return "Hola, FastAPI"
+
 @app.get("/users/")
 def get_users():
     # Simulando algunos datos
@@ -35,3 +37,13 @@ def get_users():
         {"id": 3, "name": "Luis", "lastName": "Sánchez"},
     ]
     return {"message": "Usuarios obtenidos correctamente", "data": users_data}
+
+@app.get("/api/v1/node-users")
+def get_users_node():
+    response = requests.get("http://localhost:3000/api/usuarios")
+
+    response.raise_for_status()
+
+    users = response.json()
+
+    return {"message":"GET users from node","users_node":users}

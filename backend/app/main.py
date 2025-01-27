@@ -41,9 +41,6 @@ def get_users():
 @app.get("/api/v1/node-users")
 def get_users_node():
     response = requests.get("http://localhost:3000/api/usuarios")
-
     response.raise_for_status()
-
     users = response.json()
-
     return {"message":"GET users from node","users_node":users}

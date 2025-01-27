@@ -1,5 +1,5 @@
 # veterinaria
-##Comandos a Ejecutar
+
 ##Frontend:
   - cd Frontend
   - npm install

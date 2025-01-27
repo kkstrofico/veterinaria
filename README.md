@@ -10,12 +10,12 @@
 
 
 
-## FastAPi
-1. Crear un entorno virtual: py -3 -m venv venv
-2. Activar el entorno virtual: ./venv/Scripts/activate
-3. Instalar FastAPI: pip install fastapi
-4. Instalar el servidor: pip install uvicorn
-5. Ejecutar el servidor: uvicorn backend.app.main:app --reload
+## Configuración de FastAPi
+1. cd backend
+2. py -3 -m venv venv
+3. ejecutar en la terminal de vsc: ./venv/Scripts/activate
+4. pip install -r requirements.txt
+5. ejecutar servidor: *uvicorn app.main:app --reload*
 
 ## Node.js
 

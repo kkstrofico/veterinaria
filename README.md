@@ -21,5 +21,6 @@
 
 1. npm install express (ejecutarlo en la rama node)
 2. npm install cors
-
+3. npm install jsonwebtoken
+4. npm install dotenv
 

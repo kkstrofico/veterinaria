@@ -1,9 +1,11 @@
 # veterinaria
-**Comandos a Ejecutar**
-Frontend:
+##Comandos a Ejecutar
+##Frontend:
   - cd Frontend
   - npm install
   - npm run dev
+  - npm install react-router-dom
+
 
 
 ## FastAPi

@@ -1,0 +1,59 @@
+/* Formulario */
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 15px;
+    max-width: 370px;
+    margin: 100px auto;
+    background-color: #bce0e5;
+    border-radius: 10px;
+}
+h2{
+    font-weight: bold;
+    font-size: 35px;
+}
+/* Campos de entrada */
+input {
+    background-color: #2a444f; 
+    border-radius: 10px; 
+    color: #587373; 
+    padding: 15px;
+    width: 320px;
+    box-sizing: border-box; 
+    border: none; 
+}
+input::placeholder{
+    color: 5d6867;
+}
+input:hover{
+    background-color: transparent;
+    border: none;
+}
+input:focus{
+    outline: none;
+    border-bottom: 2px solid black;
+    color: #305f6e;
+}
+input:focus::placeholder{
+    color: #305f6e;
+}
+
+/* Botón */
+button {
+    background-color: #8ec8d2; 
+    padding: 9px; 
+    border-radius: 0px 0px 10px 10px; 
+    color: #373d3d;
+    font-weight: bold; 
+    cursor: pointer; 
+    width: 370px;
+    margin-top: 15px;
+    border: none; 
+}
+
+/* Hover del botón */
+button:hover {
+    background-color: #00bf45;
+    color: #fff;
+}

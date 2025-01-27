@@ -1,10 +1,25 @@
 import { useState,useEffect } from 'react'
 import '../../styles/Register.css'
+import axios from 'axios'; //Libreria que permite realizar solicitudees HTTP
 
 function Register() {
     const [correo, setCorreo]= useState("");
     const [password1, setPassword1]= useState("");
     const [password2, setPassword2]= useState("");
+
+    // Funcion que realiza peticiones a la api
+    const sendData=async()=>{
+        try{
+            const response = await axios.post("http://localhost:3000/register",{
+                user:correo,
+                password:password1
+            });
+            console.log(response)//obtener respuesta de api
+        }catch(error){
+            console.log('Error: ',error);
+        }
+    };
+
     const handleSubmit=(e)=>{
         e.preventDefault();
         if(password1!==password2){
@@ -13,13 +28,15 @@ function Register() {
             alert("Error, Las Contraseñas no Coinciden")
             
 
+        }else{
+            //LLAMAR FUNCION QUE LLAMA API Y PASA
+            //  DATOS
+            sendData();
         }
-        //LLAMAR A API Y PASAR DATOS
-
 
     }
 
-
+        
     return (
         <form onSubmit={handleSubmit}>
             <h2>Register</h2>

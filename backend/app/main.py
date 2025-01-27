@@ -1,9 +1,48 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException,status 
 import requests 
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from .models import User,Pet
 
 app = FastAPI()
+
+fake_db = {
+    "Edier": {
+        "name":"Edier Andres",
+        "email": "edier@example.com",
+        "age": 28,
+        "city": "Bogotá",
+        "pets": [
+            {"name": "Firulais", "type": "dog", "age": 3},
+            {"name": "Michi", "type": "cat", "age": 2}
+        ]
+    },
+    "Maria": {
+        "name":"Maria Alejandra",
+        "email": "maria@example.com",
+        "age": 34,
+        "city": "Medellín",
+        "pets": [
+            {"name": "Rex", "type": "dog", "age": 5}
+        ]
+    },
+    "Carlos": {
+        "name":"Carlos",
+        "email": "carlos@example.com",
+        "age": 25,
+        "city": "Cali",
+        "pets": []
+    },
+    "Lucia": {
+        "name":"Lucia",
+        "email": "lucia@example.com",
+        "age": 30,
+        "city": "Cartagena",
+        "pets": [
+            {"name": "Kira", "type": "parrot", "age": 1}
+        ]
+    }
+}
+
 
 # Lista de orígenes permitidos (React suele correr en localhost:3000 durante el desarrollo)
 origins = [
@@ -19,16 +58,13 @@ app.add_middleware(
     allow_headers=["*"],  # Permitir todos los headers
 )
 
-class UserSchema(BaseModel):
-    id:int
-    name:str
-    lastName:str
+
 
 @app.get("/")
 def root():
     return "Hola, FastAPI"
 
-@app.get("/users/")
+@app.get("/api/v1/users")
 def get_users():
     # Simulando algunos datos
     users_data = [
@@ -38,9 +74,9 @@ def get_users():
     ]
     return {"message": "Usuarios obtenidos correctamente", "data": users_data}
 
-@app.get("/api/v1/node-users")
-def get_users_node():
-    response = requests.get("http://localhost:3000/api/usuarios")
-    response.raise_for_status()
-    users = response.json()
-    return {"message":"GET users from node","users_node":users}
+@app.get("/api/v1/get-user/{name_user}",response_model=User)
+def valid_user(name_user:str):
+    user_db = fake_db.get(name_user)
+    if not user_db: 
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not fount")
+    return user_db

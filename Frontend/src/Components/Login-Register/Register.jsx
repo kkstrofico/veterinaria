@@ -11,10 +11,18 @@ function Register() {
     const sendData=async()=>{
         try{
             const response = await axios.post("http://localhost:3000/register",{
-                user:correo,
+                username:correo,
                 password:password1
+            },{
+                headers:{
+                    'Content-Type':'application/json'
+                }
             });
             console.log(response)//obtener respuesta de api
+            if (response.data.message === "User created successfully" ){
+                alert("Has sido registrado exitosamente")
+                alert("mira el token bro: " +response.data.token)
+            }
         }catch(error){
             console.log('Error: ',error);
         }

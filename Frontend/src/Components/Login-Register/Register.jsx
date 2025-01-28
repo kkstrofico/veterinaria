@@ -19,9 +19,13 @@ function Register() {
                 }
             });
             console.log(response)//obtener respuesta de api
-            if (response.data.message === "User created successfully" ){
+            if (response.data.message === "User created and validated successfully" ){
                 alert("Has sido registrado exitosamente")
                 alert("mira el token bro: " +response.data.token)
+                const infoUser = response.data.userData;
+                const infoPets = infoUser.pets[0];
+
+                alert("Mira tus pinches datos "+ infoUser.name + " edad: " + infoUser.age + " Tienes un "+ infoPets.type + " y se llama " + infoPets.name);
             }
         }catch(error){
             console.log('Error: ',error);

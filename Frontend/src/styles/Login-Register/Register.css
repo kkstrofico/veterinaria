@@ -1,20 +1,21 @@
 /* Formulario */
-form {
+.formRegister {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 15px;
+    gap: 25px;
     max-width: 370px;
     margin: 100px auto;
     background-color: #bce0e5;
     border-radius: 10px;
 }
-h2{
+.titleRegister{
     font-weight: bold;
     font-size: 35px;
+    margin-top: 10px;
 }
 /* Campos de entrada */
-input {
+.input {
     background-color: #2a444f; 
     border-radius: 10px; 
     color: #587373; 
@@ -23,24 +24,24 @@ input {
     box-sizing: border-box; 
     border: none; 
 }
-input::placeholder{
+.input::placeholder{
     color: 5d6867;
 }
-input:hover{
+.input:hover{
     background-color: transparent;
     border: none;
 }
-input:focus{
+.input:focus{
     outline: none;
     border-bottom: 2px solid black;
     color: #305f6e;
 }
-input:focus::placeholder{
+.input:focus::placeholder{
     color: #305f6e;
 }
 
 /* Botón */
-button {
+.btn-register {
     background-color: #8ec8d2; 
     padding: 9px; 
     border-radius: 0px 0px 10px 10px; 
@@ -53,7 +54,7 @@ button {
 }
 
 /* Hover del botón */
-button:hover {
+.btn-register:hover {
     background-color: #00bf45;
     color: #fff;
 }

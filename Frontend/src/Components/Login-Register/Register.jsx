@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react'
-import '../../styles/Register.css'
+import '../../styles/Login-Register/Register.css'
 import axios from 'axios'; //Libreria que permite realizar solicitudees HTTP
 
 function Register() {
@@ -50,23 +50,23 @@ function Register() {
 
         
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Register</h2>
-            <input type="text" placeholder='Ingresa tu correo Electronico' id='correo' onChange={(e)=>{
+        <form className='formRegister' onSubmit={handleSubmit}>
+            <h2 className='titleRegister'>Register</h2>
+            <input className='input'  type="text" placeholder='Ingresa tu correo Electronico' id='correo' onChange={(e)=>{
                 setCorreo(e.target.value)
 
             }} />
 
-            <input type="password" placeholder='Ingresa una contraseña' id='password1' onChange={(e)=>{
+            <input className='input'   type="password" placeholder='Ingresa una contraseña' id='password1' onChange={(e)=>{
                 setPassword1(e.target.value)
                 
             }} />
 
-            <input type="password" placeholder='Confirma la contraseña' id='password2' onChange={(e)=>{
+            <input className='input'  type="password" placeholder='Confirma la contraseña' id='password2' onChange={(e)=>{
                 setPassword2(e.target.value)
             }} />
 
-            <button>Send</button>
+            <button className='btn-register'>Register</button>
 
         </form>
     )

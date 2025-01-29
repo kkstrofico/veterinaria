@@ -5,6 +5,8 @@ import NavBar from './Layouts/Navbar'
 import About from './Components/About'
 import Inicio from './Components/Inicio'
 import Register from './Components/Login-Register/Register'
+import Login from './Components/Login-Register/Login'
+import Footer from './Layouts/Footer'
 
 
 function App() {
@@ -18,9 +20,12 @@ function App() {
           <Route path='/' element={<Inicio/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login/>}/>
 
         </Routes>
       </div>
+
+      <Footer/>
     </Router>
 
 

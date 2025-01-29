@@ -1,0 +1,99 @@
+
+*{
+    list-style: none;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: #5b686c;
+    padding: 13px;
+    gap: 20px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 4px;
+}
+
+.proyect h2{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+.proyect p{
+    margin-left: 18px;
+}
+.authors{
+    align-items: center;
+}
+.authors h2{
+    color:#ebe8ff ;
+    letter-spacing: 1.5px;
+}
+
+.authors ul{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    color: #182653;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+.authors ul li:not(:last-child)::after{
+    content: "|";
+    color: #fff;
+    font-size: 800;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+.redes h2{
+    display: none;
+    color:#6182d0 ;
+    letter-spacing: 1.5px;
+    
+}
+.redes ul{
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+.link a{
+    letter-spacing: 1px;
+    font-weight: 550;
+    text-decoration: none;
+}
+
+/* ICONOS */
+.icon-pets{
+    color:#7d3711;
+}
+.icon{
+    font-size:30px;
+}
+.tiktok{
+    color: #ffcf;
+}
+.github{
+    color: #fff;
+
+}
+.facebook{
+    color: #48e;
+
+}
+.whatsaap{
+    color: #99d665;
+}

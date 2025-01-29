@@ -1,19 +1,23 @@
 /* Estilos para el nav */
 nav {
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    position: sticky;
     background-color: #2a2a2a; /* Color de fondo */
     padding: 15px; /* Espaciado interno */
     display: flex; /* Alineación horizontal de los enlaces */
     justify-content: center; /* Centra los enlaces en el nav */
     gap: 20px; /* Espaciado entre los enlaces */
-    border-radius: 8px; /* Bordes redondeados */
 }
 
 /* Estilos para los enlaces */
 nav a {
     color: #ffffff; /* Color del texto */
     text-decoration: none; /* Quita el subrayado */
-    font-size: 1.2rem; /* Tamaño de la fuente */
+    font-size: 25px; /* Tamaño de la fuente */
     font-weight: bold; /* Negrita */
+    padding: 10px;
     transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
 }
 
@@ -31,3 +35,5 @@ nav a:hover {
         gap: 10px; /* Espaciado más pequeño entre enlaces */
     }
 }
+
+

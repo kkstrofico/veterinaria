@@ -6,9 +6,10 @@ from models import Veterinario
 
 router = APIRouter(prefix="/api/v1/veterinario",tags=["veterinario"])
 
-@router.post("/",response_model=VeterinarioSchema)
+@router.post("/")
 def login(veterinario_data:VeterinarioLogin,db:Session = Depends(get_db)):
+    print(veterinario_data)
     veterinario = db.query(Veterinario).filter(Veterinario.username == veterinario_data.username, Veterinario.password == veterinario_data.password).first()
     if not veterinario: 
-        {"message":"Usuario no encontrado o contraseña invalida"} 
+        return {"message":"Usuario no encontrado o contraseña invalida"} 
     return veterinario

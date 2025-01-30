@@ -6,6 +6,7 @@ function Navbar() {
             <Link to={"/"}>Inicio</Link>
             <Link to={"/about"}>Sobre nosotros</Link>
             <Link to={"/contact"}>contacto</Link>
+            <Link to={"/mascota"}>Mascota</Link>
         </nav>
     
         

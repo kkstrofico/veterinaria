@@ -1,12 +1,15 @@
 import '../../styles/Login-Register/Login.css'
 import {useState,useEffect} from 'react'
+import {sendDataLogin} from '../../apis'
+
+
 function Login() {
     const [userName, setUserName]=useState("");
     const [password, setPassword]=useState("");
     const handleSubmit =(e)=>{
         e.preventDefault();
         //LLAMAR API LOGIN
-      
+        sendDataLogin(userName,password);
 
     }
 
@@ -32,7 +35,7 @@ function Login() {
 
                     <button type='submit' className='button'>Login</button>
                     <div className='register-link'>
-                        <p>Don't have an account <a href="#">Register</a></p>
+                        <p>Don't have an account <a href="/register">Register</a></p>
                     </div>
 
                 </form>

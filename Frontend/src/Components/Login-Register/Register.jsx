@@ -1,36 +1,11 @@
 import { useState,useEffect } from 'react'
 import '../../styles/Login-Register/Register.css'
-import axios from 'axios'; //Libreria que permite realizar solicitudees HTTP
-
+import {sendDataRegister} from '../../apis'
 function Register() {
     const [correo, setCorreo]= useState("");
     const [password1, setPassword1]= useState("");
     const [password2, setPassword2]= useState("");
 
-    // Funcion que realiza peticiones a la api
-    const sendData=async()=>{
-        try{
-            const response = await axios.post("http://localhost:3000/register",{
-                username:correo,
-                password:password1
-            },{
-                headers:{
-                    'Content-Type':'application/json'
-                }
-            });
-            console.log(response)//obtener respuesta de api
-            if (response.data.message === "User created and validated successfully" ){
-                alert("Has sido registrado exitosamente")
-                alert("mira el token bro: " +response.data.token)
-                const infoUser = response.data.userData;
-                const infoPets = infoUser.pets[0];
-
-                alert("Mira tus pinches datos "+ infoUser.name + " edad: " + infoUser.age + " Tienes un "+ infoPets.type + " y se llama " + infoPets.name);
-            }
-        }catch(error){
-            console.log('Error: ',error);
-        }
-    };
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -43,7 +18,7 @@ function Register() {
         }else{
             //LLAMAR FUNCION QUE LLAMA API Y PASA
             //  DATOS
-            sendData();
+            sendDataRegister();
         }
 
     }

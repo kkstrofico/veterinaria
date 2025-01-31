@@ -16,7 +16,7 @@
 2. py -3 -m venv venv
 3. ejecutar en la terminal de vsc: ./venv/Scripts/activate
 4. pip install -r requirements.txt
-5. ejecutar servidor: *uvicorn app.main:app --reload*
+5. ejecutar servidor: *uvicorn main:app --reload*
 
 ## Node.js
 

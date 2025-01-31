@@ -7,7 +7,7 @@ from auth import encode_token
 
 router = APIRouter(prefix="/api/v1/veterinario",tags=["veterinario"])
 
-@router.post("/")
+@router.post("/token")
 def login(veterinario_data:VeterinarioLogin,db:Session = Depends(get_db)):
     veterinario = db.query(Veterinario).filter(Veterinario.username == veterinario_data.username, Veterinario.password == veterinario_data.password).first()
     if not veterinario: 
